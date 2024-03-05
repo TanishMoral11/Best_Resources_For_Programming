@@ -1,3 +1,27 @@
+// // Get the progress bar element
+// var progressBar = document.getElementById("myBar");
+
+// // Calculate the scroll progress and update the progress bar width
+// function updateProgressBar() {
+//     var scrollTop = window.scrollY;
+//     var windowHeight = window.innerHeight;
+//     var documentHeight = document.body.clientHeight;
+//     var scrollableDistance = documentHeight - windowHeight;
+//     var progress = (scrollTop / scrollableDistance) * 100;
+//     progressBar.style.width = progress + "%";
+// }
+
+// // Listen for scroll events and update the progress bar
+// window.addEventListener("scroll", updateProgressBar);
+// // Function to scroll to the top of the page
+// function scrollToTop() {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: 'smooth'
+//   });
+// }
+
+
 
 // search-box open close js code
 let navbar = document.querySelector(".navbar");
@@ -29,16 +53,11 @@ htmlcssArrow.onclick = function () {
   navLinks.classList.toggle("show1");
 };
 
-// let moreArrow = document.querySelector(".more-arrow");
-// moreArrow.onclick = function () {
-//   navLinks.classList.toggle("show2");
-// };
 let front_END = document.querySelector(".js-sub-menu .more-arrow");
 front_END.onclick = function (e) {
   e.stopPropagation(); // Prevent the event from reaching the document click handler
   navLinks.classList.toggle("show2");
 };
-
 
 let jsArrow = document.querySelector(".js-arrow");
 jsArrow.onclick = function () {
@@ -76,8 +95,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-
-
+// Scroll to top button functionality
 document.addEventListener("DOMContentLoaded", function() {
   var topLink = document.getElementById('TMresources');
   topLink.addEventListener('click', function(e) {
@@ -90,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   });
 });
-
 
 // Get the button
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -111,8 +128,7 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
-scrollToTopBtn.addEventListener("click", function() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-});
+
+
+// Attach scrollToTop function to the click event of the scrollToTopBtn
+scrollToTopBtn.addEventListener('click', scrollToTop);
