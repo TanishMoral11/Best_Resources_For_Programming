@@ -1,25 +1,25 @@
-// // Get the progress bar element
-// var progressBar = document.getElementById("myBar");
+// Get the progress bar element
+var progressBar = document.getElementById("myBar");
 
-// // Calculate the scroll progress and update the progress bar width
-// function updateProgressBar() {
-//     var scrollTop = window.scrollY;
-//     var windowHeight = window.innerHeight;
-//     var documentHeight = document.body.clientHeight;
-//     var scrollableDistance = documentHeight - windowHeight;
-//     var progress = (scrollTop / scrollableDistance) * 100;
-//     progressBar.style.width = progress + "%";
-// }
+// Calculate the scroll progress and update the progress bar width
+function updateProgressBar() {
+    var scrollTop = window.scrollY;
+    var windowHeight = window.innerHeight;
+    var documentHeight = document.body.clientHeight;
+    var scrollableDistance = documentHeight - windowHeight;
+    var progress = (scrollTop / scrollableDistance) * 100;
+    progressBar.style.width = progress + "%";
+}
 
-// // Listen for scroll events and update the progress bar
-// window.addEventListener("scroll", updateProgressBar);
-// // Function to scroll to the top of the page
-// function scrollToTop() {
-//   window.scrollTo({
-//     top: 0,
-//     behavior: 'smooth'
-//   });
-// }
+// Listen for scroll events and update the progress bar
+window.addEventListener("scroll", updateProgressBar);
+// Function to scroll to the top of the page
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
 
 
 
@@ -132,3 +132,26 @@ function scrollFunction() {
 
 // Attach scrollToTop function to the click event of the scrollToTopBtn
 scrollToTopBtn.addEventListener('click', scrollToTop);
+
+// Check if the progress element exists in the document
+let prog = document.getElementById('progress');
+if (!prog) {
+    console.error("Progress element not found.");
+}
+
+// Function to calculate and set the progress
+const setProgress = () => {
+    let scrollFromTop = window.scrollY || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let width = (scrollFromTop / height) * 100 + '%';
+
+    if (prog) {
+        prog.style.width = width;
+    }
+};
+
+// Add scroll event listener
+window.addEventListener('scroll', setProgress);
+
+// Initial call to set progress when the page loads
+setProgress();

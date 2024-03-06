@@ -7,6 +7,7 @@ body {
   
   padding-left: 0;
   width: auto;
+  height: 100%;
   
 }
 
@@ -181,6 +182,16 @@ body {
   width: 10%;
 }
  */
+
+ #progress {
+  background-color: orangered;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  z-index: 1000;
+}
 
 
 @media (max-width: 600px) {
