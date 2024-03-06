@@ -184,7 +184,7 @@ body {
  */
 
  #progress {
-  background-color: orangered;
+  background: linear-gradient(to right, orange, red);
   position: fixed;
   top: 0;
   left: 0;
@@ -192,6 +192,7 @@ body {
   height: 4px;
   z-index: 1000;
 }
+
 
 
 @media (max-width: 600px) {
